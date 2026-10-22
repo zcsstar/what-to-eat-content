@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "version": "e2728b2c463c",
-  "revision": 1,
-  "publishedAt": "2026-10-22T05:25:36.928Z",
-  "pack": "packs/e2728b2c463c.json",
-  "recipes": 150,
+  "version": "c3128b316664",
+  "revision": 2,
+  "publishedAt": "2026-10-22T21:00:25.102Z",
+  "pack": "packs/c3128b316664.json",
+  "recipes": 179,
   "images": {
     "dishes/hero/beef-potato-stew": "f3402270d727",
     "dishes/hero/blanched-choy-sum": "3e6f05bd1f01",
