@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "version": "19e0ceb65591",
-  "revision": 15,
-  "publishedAt": "2026-10-30T05:18:49.158Z",
-  "pack": "packs/19e0ceb65591.json",
-  "recipes": 193,
+  "version": "3e635f9bc0c8",
+  "revision": 16,
+  "publishedAt": "2026-10-30T11:04:36.362Z",
+  "pack": "packs/3e635f9bc0c8.json",
+  "recipes": 213,
   "images": {
     "dishes/hero/ants-climbing-a-tree": "694c9053bfa7",
     "dishes/hero/avocado-toast": "31573c5d8ad6",
