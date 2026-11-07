@@ -66,7 +66,7 @@
 
       <section id="zh" lang="zh-CN">
         <h1>隐私政策</h1>
-        <p class="updated">最后更新：2026 年 10 月 23 日</p>
+        <p class="updated">最后更新：2026 年 11 月 7 日</p>
         <p>
           「吃啥」（英文名 What to Eat?）是个人开发者 Chi Zhang 开发的家常菜推荐 App。本页说明这个
           App 会处理哪些数据。
@@ -75,7 +75,9 @@
         <h2>简要说明</h2>
         <ul>
           <li>
-            不需要注册账号。开发者没有自己的服务器，不收集你的个人信息，App 里也没有统计分析工具。
+            不需要注册账号。开发者不收集你的个人信息，App
+            里也没有统计分析工具。只有在你主动提交「建议」时，App
+            才会把你写的内容发给开发者，见下文。
           </li>
           <li>
             你在 App
@@ -143,6 +145,21 @@
           </li>
         </ul>
 
+        <h2>建议菜谱和功能建议</h2>
+        <ul>
+          <li>
+            在「建议一道菜」「建议添加食材」「功能建议」里点「提交」后，App
+            会发送：你填的菜名或食材名、写的说明、点选的口味和特点，以及 App
+            版本、系统平台、语言和菜谱数据版本。不发送账号、设备标识、照片或位置；请不要在建议里写个人信息。
+          </li>
+          <li>
+            建议经开发者在 Cloudflare 上运行的一个小服务，存为开发者私有 GitHub
+            仓库里的一条记录，只有开发者能看到，用来决定增加哪些菜谱和功能。为了防止滥用，这个服务按网络地址的加密哈希统计当天提交了几次，两天后自动删除，不保存网络地址本身。Cloudflare
+            和 GitHub 按各自的隐私政策处理这些请求。
+          </li>
+          <li>没联网时，建议先存在这台设备上，联网后再发送。</li>
+        </ul>
+
         <h2>儿童</h2>
         <p>App 适合所有年龄使用，但不是专门面向儿童的服务，开发者不会有意收集儿童的个人信息。</p>
 
@@ -154,8 +171,8 @@
 
         <h2>数据保留与删除</h2>
         <p>
-          开发者不保存你的任何数据。设备上的数据在删除 App 时一并删除。Google、GitHub 和 Expo
-          的数据保留按它们各自的政策执行。
+          开发者只保存你主动提交的建议，处理完会关闭或删除；建议不含个人信息，无法对应到具体的人。想删除自己提交过的某条建议，写信告诉我们它的内容即可。设备上的数据在删除
+          App 时一并删除。Google、GitHub、Cloudflare 和 Expo 的数据保留按它们各自的政策执行。
         </p>
 
         <h2>政策变更</h2>
@@ -174,7 +191,7 @@
 
       <section id="en" lang="en">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: 23 October 2026</p>
+        <p class="updated">Last updated: 7 November 2026</p>
         <p>
           吃啥 (What to Eat?) is a home-cooking app by the individual developer Chi Zhang. This page
           explains what data the app handles.
@@ -183,8 +200,9 @@
         <h2>Summary</h2>
         <ul>
           <li>
-            No account. The developer runs no servers of their own and collects no personal
-            information, and the app has no analytics.
+            No account. The developer collects no personal information and the app has no analytics.
+            Only when you send a suggestion does the app pass what you wrote to the developer, as
+            described below.
           </li>
           <li>
             What you enter stays on this device and is never uploaded: the ingredients you have,
@@ -267,6 +285,26 @@
           </li>
         </ul>
 
+        <h2>Suggestions</h2>
+        <ul>
+          <li>
+            When you tap Send under Suggest a dish, Suggest an ingredient or Suggest a feature, the
+            app sends the dish or ingredient you named, the words you wrote, the taste and character
+            tags you tapped, and the app version, platform, language and recipe data version. It
+            sends no account, device identifier, photo or location; please don't put personal
+            information in a suggestion.
+          </li>
+          <li>
+            Suggestions pass through a small service the developer runs on Cloudflare and are kept
+            as entries in the developer's private GitHub repository, seen only by the developer, to
+            decide which recipes and features to add. To prevent abuse, the service counts a day's
+            suggestions under a one-way hash of the network address, deleted after two days; the
+            address itself is never stored. Cloudflare and GitHub handle these requests under their
+            own privacy policies.
+          </li>
+          <li>Without a connection, a suggestion waits on your device and is sent later.</li>
+        </ul>
+
         <h2>Children</h2>
         <p>
           The app suits all ages but isn't directed at children, and the developer doesn't knowingly
@@ -282,8 +320,11 @@
 
         <h2>Retention and deletion</h2>
         <p>
-          The developer keeps none of your data. The data on your device is deleted with the app.
-          Google, GitHub and Expo keep data under their own policies.
+          The developer keeps only the suggestions you choose to send, and closes or deletes them
+          once dealt with; they carry no personal information and can't be traced to a person. To
+          have one of yours deleted, write to us with what it said. The data on your device is
+          deleted with the app. Google, GitHub, Cloudflare and Expo keep data under their own
+          policies.
         </p>
 
         <h2>Changes</h2>
