@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "version": "3cd5e370fb5e",
-  "revision": 24,
-  "publishedAt": "2026-11-08T09:28:19.097Z",
+  "revision": 25,
+  "publishedAt": "2026-11-10T02:58:03.119Z",
   "pack": "packs/3cd5e370fb5e.json",
   "recipes": 252,
   "images": {
@@ -680,5 +680,10 @@
     "ingredients/yogurt": "56af5f95c8cf",
     "ingredients/zha-cai": "61a1a514beba",
     "ingredients/zucchini": "80c25c80913b"
+  },
+  "ads": {
+    "interstitial": {
+      "graceDays": 1
+    }
   }
 }
