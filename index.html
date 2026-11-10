@@ -4,16 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="favicon.png" />
-    <title>吃啥 / What to Eat? — 支持 · Support</title>
+    <title>吃啥 / What to Eat? — 今天吃什么，一键决定</title>
     <meta
       name="description"
       content="吃啥 / What to Eat?：按人数、时间和家里的食材，一键搭配一整餐家常菜。Whole home-cooked meals in one tap." />
+    <meta property="og:title" content="吃啥 / What to Eat?" />
+    <meta
+      property="og:description"
+      content="今天吃什么？一键帮你决定。Whole home-cooked meals in one tap." />
+    <meta
+      property="og:image"
+      content="https://zcsstar.github.io/what-to-eat-content/img/icon.png" />
+    <meta name="apple-itunes-app" content="app-id=6826026839" />
     <style>
+      :root {
+        --cream: #fff7ec;
+        --surface: #ffffff;
+        --brown: #4a2e1e;
+        --muted: #7a5a45;
+        --orange: #ff8a3d;
+        --orange-text: #b34d16;
+        --beige: #f2e4d6;
+      }
       html,
       body {
         margin: 0;
-        background: #fff7ec;
-        color: #4a2e1e;
+        background: var(--cream);
+        color: var(--brown);
         font-family:
           -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto,
           'Helvetica Neue', Arial, sans-serif;
@@ -21,55 +38,285 @@
         font-size: 16px;
       }
       main {
-        max-width: 720px;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 2rem 1rem 4rem;
+        padding: 1rem 16px 4rem;
+      }
+      .bar {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .lang {
+        border: 1px solid var(--beige);
+        background: var(--surface);
+        color: var(--brown);
+        border-radius: 999px;
+        padding: 0.35rem 0.9rem;
+        font: inherit;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+      .hero {
+        text-align: center;
+        padding: 1.5rem 0 1rem;
+      }
+      .hero img {
+        width: 112px;
+        height: 112px;
+        border-radius: 26px;
+        box-shadow: 0 8px 24px rgba(179, 77, 22, 0.18);
       }
       h1 {
-        font-size: 1.75rem;
-        margin: 0 0 1rem;
+        font-size: 2.25rem;
+        margin: 1rem 0 0.25rem;
+        letter-spacing: 0.02em;
+      }
+      .tagline {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 0 0.75rem;
+      }
+      .lead {
+        max-width: 36rem;
+        margin: 0 auto 1.5rem;
+        color: var(--muted);
+      }
+      .store {
+        display: inline-block;
+        background: var(--orange);
+        color: var(--brown);
+        font-weight: 800;
+        text-decoration: none;
+        padding: 0.85rem 1.6rem;
+        border-radius: 16px;
+        min-height: 44px;
+        box-sizing: border-box;
+      }
+      .store:focus-visible,
+      .lang:focus-visible {
+        outline: 3px solid var(--orange-text);
+        outline-offset: 2px;
+      }
+      .note {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0.75rem 0 0;
+      }
+      .shots {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 1.5rem 0 0.5rem;
+        scroll-snap-type: x mandatory;
+      }
+      .shots img {
+        flex: 0 0 auto;
+        width: min(220px, 60vw);
+        height: auto;
+        border-radius: 18px;
+        scroll-snap-align: center;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        padding: 0;
+        margin: 1.5rem 0;
+        list-style: none;
+      }
+      .features li {
+        background: var(--surface);
+        border-radius: 18px;
+        padding: 1rem 1.1rem;
+      }
+      .features strong {
+        display: block;
+        margin-bottom: 0.25rem;
       }
       h2 {
         font-size: 1.1rem;
         margin: 2rem 0 0.5rem;
       }
       a {
-        color: #b34d16;
+        color: var(--orange-text);
+      }
+      .store {
+        color: var(--brown);
       }
       .muted {
-        color: #7a5a45;
+        color: var(--muted);
         font-size: 0.9rem;
+      }
+      [hidden] {
+        display: none !important;
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>吃啥 / What to Eat?</h1>
+      <div class="bar">
+        <button class="lang" type="button" id="lang" aria-label="English">English</button>
+      </div>
 
-      <section lang="zh-CN">
-        <p>「吃啥」帮你决定今天吃什么：按人数、时间和家里的食材，一键搭配一整餐家常菜。</p>
+      <section lang="zh-CN" data-lang="zh">
+        <div class="hero">
+          <img src="img/icon.png" alt="吃啥图标" width="112" height="112" />
+          <h1>吃啥</h1>
+          <p class="tagline">今天吃什么？一键帮你决定。</p>
+          <p class="lead">
+            按人数、时间和家里的食材，搭配一整餐家常菜：荤素、主食、汤都替你配好，步骤清清楚楚，还能读给你听。
+          </p>
+          <a class="store" href="https://apps.apple.com/app/id6826026839">在 App Store 下载</a>
+          <p class="note">iPhone 版已上架；安卓版正在 Google Play 测试，即将上架。</p>
+        </div>
+        <div class="shots" aria-label="App 截图">
+          <img
+            src="img/zh-1.webp"
+            alt="今天吃啥？一键帮你决定"
+            width="480"
+            height="1040"
+            loading="lazy" />
+          <img
+            src="img/zh-2.webp"
+            alt="不只一道菜，而是一整餐"
+            width="480"
+            height="1040"
+            loading="lazy" />
+          <img
+            src="img/zh-3.webp"
+            alt="冰箱里有什么，就从什么开始"
+            width="480"
+            height="1040"
+            loading="lazy" />
+          <img
+            src="img/zh-6.webp"
+            alt="大字分步，还能读给你听"
+            width="480"
+            height="1040"
+            loading="lazy" />
+        </div>
+        <ul class="features">
+          <li>
+            <strong>不只一道菜，而是一整餐</strong>按人数配好主菜、配菜、主食和汤，算好总时间。
+          </li>
+          <li>
+            <strong>冰箱里有什么，就从什么开始</strong
+            >选几样手头的食材，推荐能做的菜，缺什么一眼看清。
+          </li>
+          <li>
+            <strong>大字分步，还能读给你听</strong>每一步的用量写在步骤里，做菜时不用翻来翻去。
+          </li>
+          <li>
+            <strong>几百道家常菜，持续更新</strong
+            >不用注册，收藏和偏好只存在你的手机上。免费使用，有少量广告。
+          </li>
+        </ul>
         <h2>支持与反馈</h2>
         <p>
           有问题或建议，请发邮件至
-          <a href="mailto:nzcheez@gmail.com">nzcheez@gmail.com</a>。
+          <a href="mailto:nzcheez@gmail.com">nzcheez@gmail.com</a>，或在 App 的「设置 ›
+          功能建议」里告诉我们。
         </p>
         <p><a href="privacy/">隐私政策</a></p>
       </section>
 
-      <section lang="en">
+      <section lang="en" data-lang="en" hidden>
+        <div class="hero">
+          <img src="img/icon.png" alt="What to Eat? icon" width="112" height="112" />
+          <h1>What to Eat?</h1>
+          <p class="tagline">Can’t decide? Let us pick.</p>
+          <p class="lead">
+            A whole home-cooked meal in one tap, for your diners, your time and the ingredients you
+            have: mains, sides, rice and soup put together, with clear steps it can read aloud.
+          </p>
+          <a class="store" href="https://apps.apple.com/app/id6826026839"
+            >Download on the App Store</a
+          >
+          <p class="note">
+            On iPhone now; the Android version is in testing on Google Play and coming soon.
+          </p>
+        </div>
+        <div class="shots" aria-label="Screenshots">
+          <img
+            src="img/en-1.webp"
+            alt="Can’t decide? Let us pick"
+            width="480"
+            height="1040"
+            loading="lazy" />
+          <img
+            src="img/en-2.webp"
+            alt="Not one dish, a whole meal"
+            width="480"
+            height="1040"
+            loading="lazy" />
+          <img
+            src="img/en-3.webp"
+            alt="Start from what’s in the fridge"
+            width="480"
+            height="1040"
+            loading="lazy" />
+          <img
+            src="img/en-6.webp"
+            alt="Big steps, read aloud"
+            width="480"
+            height="1040"
+            loading="lazy" />
+        </div>
+        <ul class="features">
+          <li>
+            <strong>Not one dish, a whole meal</strong>Mains, sides, a staple and soup for your
+            table, with the total time worked out.
+          </li>
+          <li>
+            <strong>Start from what you have</strong>Pick a few ingredients and see what you can
+            make — and what’s missing.
+          </li>
+          <li>
+            <strong>Big steps, read aloud</strong>Each step shows its own amounts, so there’s no
+            scrolling back mid-cook.
+          </li>
+          <li>
+            <strong>Hundreds of home-style dishes</strong>No sign-up; favourites and preferences
+            stay on your phone. Free, with a few ads.
+          </li>
+        </ul>
         <h2>Support</h2>
         <p>
-          What to Eat? decides what to cook: a whole home-cooked meal in one tap, for your diners,
-          your time and the ingredients you have. For questions or feedback, email
-          <a href="mailto:nzcheez@gmail.com">nzcheez@gmail.com</a>.
+          For questions or feedback, email
+          <a href="mailto:nzcheez@gmail.com">nzcheez@gmail.com</a>, or use Settings › Suggest a
+          feature in the app.
         </p>
         <p><a href="privacy/#en">Privacy policy</a></p>
       </section>
 
       <p class="muted">
-        这个网站也提供 App 的菜谱和照片更新。This site also serves the app's recipe and photo
-        updates. © 2026 Chi Zhang
+        © 2026 Chi Zhang · This site also serves the app’s recipe and photo updates.
       </p>
     </main>
+    <script>
+      // One language at a time: ?lang=, then the browser's, Chinese by default.
+      (function () {
+        var param = new URLSearchParams(location.search).get('lang');
+        var browser = (navigator.language || 'zh').toLowerCase();
+        var lang =
+          param === 'en' || param === 'zh' ? param : browser.indexOf('zh') === 0 ? 'zh' : 'en';
+        var button = document.getElementById('lang');
+        function show(next) {
+          lang = next;
+          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+          document.querySelectorAll('[data-lang]').forEach(function (el) {
+            el.hidden = el.getAttribute('data-lang') !== lang;
+          });
+          button.textContent = lang === 'zh' ? 'English' : '中文';
+          button.setAttribute('aria-label', lang === 'zh' ? 'English' : '中文');
+          document.title =
+            lang === 'zh' ? '吃啥 — 今天吃什么，一键决定' : 'What to Eat? — Whole meals in one tap';
+        }
+        button.addEventListener('click', function () {
+          show(lang === 'zh' ? 'en' : 'zh');
+        });
+        show(lang);
+      })();
+    </script>
   </body>
 </html>
