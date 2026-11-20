@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "version": "3b283bc84a76",
-  "revision": 27,
-  "publishedAt": "2026-11-13T01:54:40.109Z",
-  "pack": "packs/3b283bc84a76.json",
+  "version": "73a6a82f0f74",
+  "revision": 28,
+  "publishedAt": "2026-11-20T09:49:01.276Z",
+  "pack": "packs/73a6a82f0f74.json",
   "recipes": 281,
   "images": {
     "dishes/hero/ants-climbing-a-tree": "694c9053bfa7",
